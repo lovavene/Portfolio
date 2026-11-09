@@ -1,0 +1,40 @@
+.menu {
+  position: absolute; /* floats over the hero instead of pushing it down */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* keeps it above the image */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+  box-sizing: border-box;
+  color: white;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu__logo {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.menu__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__links a {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 300; /* light weight like your picture */
+  text-transform: lowercase;
+}

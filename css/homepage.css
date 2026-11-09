@@ -1,0 +1,22 @@
+/* --- HERO --- */
+
+.hero {
+  background: url("../Assets/Me-HERO.png") center 30% / cover no-repeat;
+  background-color: #334195;
+  color: #ffffff;
+  padding: 1rem;
+  width: 100%;
+  min-height: 75vh; /* fallback for older browsers */
+  min-height: 100dvh;
+}
+
+.hero-title {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  margin: 0;
+  color: white;
+  text-align: right;
+}
+
+/* --- HERO --- */
