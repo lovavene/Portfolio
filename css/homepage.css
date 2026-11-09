@@ -1,16 +1,59 @@
+/* --- TOP VIDEO --- */
+.intro-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #fff; /* matches the video's first frame */
+  z-index: 0;
+}
+
+.page {
+  position: relative;
+  z-index: 1; /* sits on top of the video */
+  background: #fff;
+}
+
+/* Start state: portfolio parked below the screen */
+html.is-intro .page {
+  transform: translateY(100vh);
+  transform: translateY(100dvh);
+}
+
+/* The slide-up, only added when it's time to reveal */
+html.is-revealing .page {
+  transition: transform 1.2s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+/* No scrolling during the intro */
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
+}
+
+/* So the whole hero is visible when it lands */
+/* .hero {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+} */
+/* --- TOP VIDEO --- */
+
 /* --- HERO --- */
 
 .hero {
-  background: url("../Assets/Me-HERO.png") center 30% / cover no-repeat;
-  background-color: #334195;
-  color: #ffffff;
-  padding: 1rem;
-  max-width: 100%;
-  min-height: 75vh; /* fallback for older browsers */
-  min-height: 100dvh;
+  display: block;
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
 }
 
-.hero-title {
+.hero-img {
+  height: 100vh;
+}
+
+.hero__title {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
@@ -23,7 +66,7 @@
 
 /* --- SUBHEADING HERO --- */
 
-.intro {
+.sub-heading-intro {
   max-width: 100%;
   margin: 1em;
 }
