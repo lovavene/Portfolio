@@ -5,7 +5,7 @@
   background-color: #334195;
   color: #ffffff;
   padding: 1rem;
-  width: 100%;
+  max-width: 100%;
   min-height: 75vh; /* fallback for older browsers */
   min-height: 100dvh;
 }
@@ -20,3 +20,17 @@
 }
 
 /* --- HERO --- */
+
+/* --- SUBHEADING HERO --- */
+
+.intro {
+  max-width: 100%;
+  margin: 1em;
+}
+
+.icon {
+  height: 1.3em; /* scales with the text size */
+  width: auto;
+  vertical-align: middle; /* aligns the shape with the text line */
+  margin: 0 0.15em;
+}
