@@ -1,0 +1,63 @@
+/* --- INTRO VIDEO --- */
+
+/* The crop: hero shrinks from full image height to 100dvh, near the end of the slide */
+
+/* Alternative Easing To current */
+
+/* html.is-revealing main {
+  transition: transform 1.6s ease-in-out; /* fast start, one smooth landing 
+} */
+
+/* Alternative Easing To current */
+
+html.is-revealing main {
+  transition: transform 1.6s cubic-bezier(0.5, 0.6, 0.3, 1); /* fast start, one smooth landing */
+}
+
+html.is-revealing .hero {
+  transition: height 1s cubic-bezier(0, 0.2, 0.25, 1) 0.6s; /* 0.6s delay + 1s = ends together with the slide at 1.6s */
+}
+
+.intro-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: none;
+  max-height: none;
+  transform: none;
+  object-fit: cover;
+  object-position: 50% 50%; /* dead centre */
+  background: #fff;
+  z-index: 0;
+}
+
+/* The portfolio sits on top of the video */
+main {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+
+/* Start state: portfolio parked below the screen */
+html.is-intro main {
+  transform: translateY(100vh);
+  transform: translateY(100dvh);
+}
+
+/* The slide-up, only switched on when it's time to reveal */
+html.is-revealing main {
+  transition: transform 1.2s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+/* No scrolling while the intro plays */
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
+}
+
+/* --- INTRO VIDEO --- */
