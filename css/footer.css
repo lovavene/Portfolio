@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  padding: 2.5rem 2rem;
+  padding: 2rem 2rem;
   background: #fff;
   color: #000;
   font-family: "Hanken Grotesk", sans-serif;
@@ -67,7 +67,6 @@
   flex-shrink: 0;
   width: clamp(12rem, 24vw, 20rem);
   height: auto;
-  margin-right: 4vw;
 }
 
 /* Phones: stack the footer */
