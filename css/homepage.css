@@ -1,59 +1,23 @@
-/* --- TOP VIDEO --- */
-.intro-video {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #fff; /* matches the video's first frame */
-  z-index: 0;
-}
-
-.page {
-  position: relative;
-  z-index: 1; /* sits on top of the video */
-  background: #fff;
-}
-
-/* Start state: portfolio parked below the screen */
-html.is-intro .page {
-  transform: translateY(100vh);
-  transform: translateY(100dvh);
-}
-
-/* The slide-up, only added when it's time to reveal */
-html.is-revealing .page {
-  transition: transform 1.2s cubic-bezier(0.7, 0, 0.2, 1);
-}
-
-/* No scrolling during the intro */
-html.is-locked,
-html.is-locked body {
-  overflow: hidden;
-}
-
-/* So the whole hero is visible when it lands */
-/* .hero {
-  position: relative;
-  height: 100vh;
-  height: 100dvh;
-} */
-/* --- TOP VIDEO --- */
-
 /* --- HERO --- */
 
 .hero {
-  display: block;
   position: relative;
-  height: 100vh;
-  height: 100dvh;
+  background-color: #334195;
+  color: #fff;
+  height: 100vh; /* fallback */
+  height: 100dvh; /* modern browsers */
+  overflow: hidden;
 }
 
 .hero-img {
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the box and crops the excess */
+  object-position: center 30%;
+  display: block;
 }
 
-.hero__title {
+.hero-title {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
