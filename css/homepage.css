@@ -1,13 +1,20 @@
 /* --- HERO --- */
 
 .hero {
-  background: url("../Assets/Me-HERO.png") center 30% / cover no-repeat;
-  background-color: #334195;
-  color: #ffffff;
-  padding: 1rem;
+  position: relative;
+  background-color: #334ca4;
+  color: #fff;
+  height: 100vh; /* fallback */
+  height: 100dvh; /* modern browsers */
+  overflow: hidden;
+}
+
+.hero-img {
   width: 100%;
-  min-height: 75vh; /* fallback for older browsers */
-  min-height: 100dvh;
+  height: 100%;
+  object-fit: cover; /* fills the box and crops the excess */
+  object-position: center 30%;
+  display: block;
 }
 
 .hero-title {
@@ -20,3 +27,17 @@
 }
 
 /* --- HERO --- */
+
+/* --- SUBHEADING HERO --- */
+
+.sub-heading-intro {
+  max-width: 100%;
+  margin: 1em;
+}
+
+.icon {
+  height: 1.3em; /* scales with the text size */
+  width: auto;
+  vertical-align: middle; /* aligns the shape with the text line */
+  margin: 0 0.15em;
+}

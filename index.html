@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-intro is-locked">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,25 +10,43 @@
       href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/homepage.css" />
+    <link rel="stylesheet" href="./css/intro.css" />
   </head>
+
   <body>
+    <video class="intro-video" id="introVideo" muted playsinline preload="auto">
+      <source src="./Assets/intro.mp4" type="video/mp4" />
+    </video>
     <main>
       <div data-include="menu.html"></div>
+
       <div class="hero">
+        <img
+          class="hero-img"
+          src="./Assets/Me-HERO.png"
+          alt="Portrait wearing a tweed jacket"
+        />
         <h1 class="hero-title">
-          <span>Multimedia Designer &amp;</span>
-          <span>Digital Product Developer</span>
+          Multimedia Designer & Digital Product Developer
         </h1>
       </div>
 
-      <div class="hero-subheading"></div>
+      <h2 class="sub-heading-intro">
+        Hello! <img class="icon" src="Assets/circle.png" alt="" /> My name is
+        Lova and I am a Multimedia Designer &amp; Digital Product Developer
+        <img class="icon" src="Assets/diamond.png" alt="" />
+        I like to work with bold, clean &amp; expressive visions that always
+        tells a story
+        <img class="icon" src="Assets/triangle.png" alt="" />
+      </h2>
 
       <div class="gallery"></div>
 
       <div class="about-me"></div>
     </main>
     <script src="include.js"></script>
+    <script src="intro.js"></script>
   </body>
 </html>
