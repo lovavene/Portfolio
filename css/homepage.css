@@ -35,6 +35,32 @@
   margin: 1em;
 }
 
-/* --- SUBHEADING HERO ---- */
+/* --- SUBHEADING HERO --- */
+
+/* --- GALLERY --- */
+
+.work {
+  display: block;
+  max-width: 100%;
+  margin: 1em;
+}
+
+.work-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows, each as tall as its content */
+  padding: 0%;
+  gap: 1rem;
+}
+
+.work-project {
+  text-decoration: none;
+  color: black;
+}
+
+.project-img {
+  width: 100%;
+}
 
 /* --- GALLERY --- */
