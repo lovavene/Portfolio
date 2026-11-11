@@ -16,6 +16,13 @@ body {
   font-style: normal;
 } */
 
+.big-heading {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 9rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
 h1,
 .h1 {
   font-family: "Hanken Grotesk", sans-serif;
@@ -48,3 +55,20 @@ h4,
 }
 
 /* --- FONT SPECIFICATIONS --- */
+
+/* --- ICON SPECIFICATIONS --- */
+.icon {
+  height: 1.3em; /* scales with the text size */
+  width: auto;
+  vertical-align: middle; /* aligns the shape with the text line */
+  margin: 0 0.15em;
+}
+
+.icon-large {
+  height: 1em; /* scales with the text size */
+  width: auto;
+  vertical-align: middle; /* aligns the shape with the text line */
+  margin: 0 0.15em;
+}
+
+/* --- ICON SPECIFICATIONS --- */
