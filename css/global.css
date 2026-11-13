@@ -21,6 +21,7 @@ body {
   font-size: 9rem;
   font-weight: 400;
   font-style: normal;
+  margin: 0%;
 }
 
 h1,
@@ -65,7 +66,7 @@ h4,
 }
 
 .icon-large {
-  height: 1em; /* scales with the text size */
+  height: 10em; /* scales with the text size */
   width: auto;
   vertical-align: middle; /* aligns the shape with the text line */
   margin: 0 0.15em;

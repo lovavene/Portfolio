@@ -37,20 +37,37 @@
 
 /* --- SUBHEADING HERO --- */
 
-/* --- WORK  --- */
+/* --- MUTUAL SECTION CODE --- */
+.heading-icon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.big-heading-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em;
+}
+/* --- MUTUAL SECTION CODE --- */
 
-/* --- GALLERY --- */
+/* --- WORK  --- */
 
 .work {
   display: block;
   max-width: 100%;
-  margin: 1em;
+  margin: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .work-container {
   --gap: 0.25rem; /* your video's gap is roughly 4px */
   --speed: 0.8s;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --delay: 0.22s; /* hover delay: the longer, the less sensitive */
 
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -93,16 +110,30 @@
   transition: opacity 0.15s ease;
 }
 
-/* --- HOVER SWIPE (desktop only) --- */
+/* --- WORK --- */
+
+/* --- ABOUT --- */
+
+.about-me {
+  display: block;
+  max-width: 100%;
+  margin: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* --- ABOUT --- */
+
+/* --- WORK CONTINUED: HOVER SWIPE --- */
 
 @media (hover: hover) and (min-width: 701px) {
-  /* titles only appear on hover */
+  /* titles only appear on hover, a beat after the image starts moving */
   .work-title {
     opacity: 0;
   }
   .work-project:hover .work-title {
     opacity: 1;
-    transition: opacity 0.3s ease 0.15s;
+    transition: opacity 0.3s ease calc(var(--delay) + 0.15s);
   }
 
   /* the hovered project sits on top */
@@ -110,9 +141,10 @@
     z-index: 2;
   }
 
-  /* every project grows to two columns plus the gap */
+  /* every project grows to two columns plus the gap (after the delay) */
   .work-project:hover .project-img {
     width: calc(200% + var(--gap));
+    transition-delay: var(--delay);
   }
 
   /* right column: image pinned to the right edge, so it grows to the left */
@@ -137,6 +169,7 @@
   .work-project:nth-child(3n + 1):hover + .work-project + .work-project,
   .work-project:nth-child(3n + 2):hover + .work-project {
     transform: translateX(calc(100% + var(--gap)));
+    transition-delay: var(--delay);
   }
 
   /* RIGHT hovered: the other two are pushed one column left. */
@@ -145,6 +178,8 @@
       + .work-project + .work-project:nth-child(3n):hover
     ) {
     transform: translateX(calc(-100% - var(--gap)));
+    transition-delay: var(--delay);
   }
 }
-/* --- WORK --- */
+
+/* --- WORK CONTINUED: HOVER SWIPE --- */
