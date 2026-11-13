@@ -37,6 +37,8 @@
 
 /* --- SUBHEADING HERO --- */
 
+/* --- WORK  --- */
+
 /* --- GALLERY --- */
 
 .work {
@@ -46,21 +48,103 @@
 }
 
 .work-container {
-  width: 100%;
+  --gap: 0.25rem; /* your video's gap is roughly 4px */
+  --speed: 0.8s;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  grid-template-rows: repeat(2, auto); /* 2 rows, each as tall as its content */
-  padding: 0%;
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  margin: 0 0.5rem; /* use margin, not padding: the clip edge below is then the grid's own edge */
+  overflow: hidden; /* clips the projects that get pushed out of view */
 }
 
 .work-project {
+  position: relative;
+  display: block;
+  aspect-ratio: 5 / 7; /* the card keeps its height when the image gets wider */
+  color: inherit;
   text-decoration: none;
-  color: black;
+  transition: transform var(--speed) var(--ease);
 }
 
 .project-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: width var(--speed) var(--ease), opacity var(--speed) var(--ease);
 }
 
-/* --- GALLERY --- */
+/* Title sits inside the image, bottom left */
+.work-title {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* --- HOVER SWIPE (desktop only) --- */
+
+@media (hover: hover) and (min-width: 701px) {
+  /* titles only appear on hover */
+  .work-title {
+    opacity: 0;
+  }
+  .work-project:hover .work-title {
+    opacity: 1;
+    transition: opacity 0.3s ease 0.15s;
+  }
+
+  /* the hovered project sits on top */
+  .work-project:hover {
+    z-index: 2;
+  }
+
+  /* every project grows to two columns plus the gap */
+  .work-project:hover .project-img {
+    width: calc(200% + var(--gap));
+  }
+
+  /* right column: image pinned to the right edge, so it grows to the left */
+  .work-project:nth-child(3n) .project-img {
+    left: auto;
+    right: 0;
+  }
+
+  /* titles: bottom right of the expanded image */
+  .work-title {
+    left: auto;
+    right: calc(-100% - var(--gap) + 1rem);
+    text-align: right;
+  }
+  .work-project:nth-child(3n) .work-title {
+    right: 1rem;
+  }
+
+  /* LEFT hovered: the other two are pushed one column right.
+     MIDDLE hovered: the right one is pushed one column right. */
+  .work-project:nth-child(3n + 1):hover + .work-project,
+  .work-project:nth-child(3n + 1):hover + .work-project + .work-project,
+  .work-project:nth-child(3n + 2):hover + .work-project {
+    transform: translateX(calc(100% + var(--gap)));
+  }
+
+  /* RIGHT hovered: the other two are pushed one column left. */
+  .work-project:nth-child(3n + 2):has(+ .work-project:nth-child(3n):hover),
+  .work-project:nth-child(3n + 1):has(
+      + .work-project + .work-project:nth-child(3n):hover
+    ) {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+/* --- WORK --- */
