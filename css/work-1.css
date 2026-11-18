@@ -85,4 +85,29 @@
   gap: 1rem;
 }
 
-/* --- WORK 1 - PHOTOSTORY*/
+/* --- WORK 1 -PHOTOSTORY --- */
+
+/* --- COMPOSTIION --- */
+
+.composition-work-1 {
+  padding: 2rem;
+}
+
+.composition-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.composition-img-layout {
+  display: flex;
+  flex-direction: row;
+  width: 1;
+  gap: 1rem;
+}
+
+.composition-img {
+  width: 30%;
+}
