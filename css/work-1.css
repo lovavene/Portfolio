@@ -1,0 +1,88 @@
+/* --- WORK 1 HERO --- */
+.work-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background: url("../Assets/Work1/chaos-main-mockup.png");
+  background-color: #290707;
+  height: 90vh;
+  /* width: 100%; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 2rem;
+}
+
+.work-hero-title {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 1rem;
+}
+
+/* --- WORK 1 HERO --- */
+
+/* --- WORK 1 - INTRO --- */
+
+.what-is-work-1 {
+  margin: 2rem;
+  background: url("../Assets/Work1/pexels-img-3.jpg");
+  height: 90vh;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+}
+
+.what-is-work-1-text-layout {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  color: white;
+  gap: 1rem;
+}
+
+/* --- WORK 1 - INTRO --- */
+
+/* --- WORK 1 - PHOTOSTORY*/
+
+.photostory-work-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: black;
+  padding: 2rem;
+}
+
+.photostory-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.photostory-big-img {
+  width: 100%;
+}
+
+.photostory-small-img {
+  width: 100%;
+}
+
+.photostory-small-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.photostory-text-layout {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  color: white;
+  gap: 1rem;
+}
+
+/* --- WORK 1 - PHOTOSTORY*/
