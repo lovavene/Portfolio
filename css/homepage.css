@@ -122,6 +122,25 @@
   padding-bottom: 3rem;
 }
 
+.about-me-big-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+  background: url("../Assets/Img/About\ Me\ Placeholder.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
+}
+
+.about-me-hero-text {
+  display: flexbox;
+  flex-direction: column;
+  width: 50%;
+  text-align: end;
+}
+
 /* --- ABOUT --- */
 
 /* --- WORK CONTINUED: HOVER SWIPE --- */
