@@ -1,0 +1,123 @@
+/* --- ABOUT: SETS OF DROPDOWNS --- */
+
+.about-set {
+  margin: 1em;
+}
+
+.about-set-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0 1rem;
+}
+
+.about-set-title {
+  margin: 0;
+}
+
+.about-set-icon {
+  height: 2rem;
+  width: auto;
+}
+
+.about-set-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start; /* an opening box doesn't stretch its neighbours */
+}
+
+/* --- THE DROPDOWN COMPONENT --- */
+
+dropdown-box {
+  font-family: "Hanken Grotesk", sans-serif;
+  --icon-size: 1.8rem;
+  --speed: 0.4s;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --border-color: #d2d2d2;
+  --panel-bg: #d4d4d4;
+
+  display: block;
+}
+
+.dropdown-btn {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 5.5rem;
+  padding: 1rem;
+  background: #fff;
+  border: 3px solid var(--border-color);
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropdown-label {
+  text-wrap: balance;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* the icon grows in from nothing, pushing the label over */
+.dropdown-icon {
+  flex: none;
+  width: 0;
+  height: var(--icon-size);
+  margin-right: 0;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: width var(--speed) var(--ease),
+    margin-right var(--speed) var(--ease), opacity var(--speed) var(--ease),
+    transform var(--speed) var(--ease);
+}
+
+/* the dropdown opens by animating its row from 0 to full height */
+.dropdown-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  background: var(--panel-bg);
+  transition: grid-template-rows var(--speed) var(--ease),
+    opacity var(--speed) var(--ease), visibility 0s linear var(--speed);
+}
+
+.dropdown-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.dropdown-panel-text {
+  padding: 0.9rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+/* open state */
+dropdown-box.is-open .dropdown-icon {
+  width: var(--icon-size);
+  margin-right: 0.6rem;
+  opacity: 1;
+  transform: scale(1);
+}
+
+dropdown-box.is-open .dropdown-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/* Phones: one box per row (tap to open) */
+@media (max-width: 700px) {
+  .about-set-grid {
+    grid-template-columns: 1fr;
+  }
+}

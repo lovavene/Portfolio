@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/homepage.css" />
     <link rel="stylesheet" href="./css/intro.css" />
+    <link rel="stylesheet" href="./css/dropdowns.css" />
     <link rel="icon" href="data:," />
   </head>
 
@@ -120,11 +121,119 @@
           </div>
           <h2>What you should know about me</h2>
         </div>
+
+        <!-- SET 1 -->
+        <section class="about-set">
+          <div class="about-set-header">
+            <h2 class="about-set-title">Hard Skills</h2>
+            <img
+              class="about-set-icon"
+              src="./Assets/Graphics/circle.png"
+              alt=""
+            />
+          </div>
+
+          <div class="about-set-grid">
+            <dropdown-box icon="circle" label="Graphic Design">
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="circle" label="UX/UI Design &amp; Prototyping">
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box
+              icon="circle"
+              label="Media literacy &amp; critical use of AI tools"
+            >
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="circle" label="Branding and Identity">
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="circle" label="Adobe CC Suite">
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="circle" label="Figma">
+              Dropdown text.
+            </dropdown-box>
+          </div>
+        </section>
+
+        <!-- SET 2 -->
+        <section class="about-set">
+          <div class="about-set-header">
+            <h2 class="about-set-title">Soft Skills</h2>
+            <img
+              class="about-set-icon"
+              src="./Assets/Graphics/square.png"
+              alt=""
+            />
+          </div>
+
+          <div class="about-set-grid">
+            <dropdown-box
+              icon="square"
+              label="Big picture thinking and conceptual coherence"
+            >
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="square" label="Working in International Teams">
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="square" label="Client Communication">
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="square" label="Adaptability">
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box icon="square" label="Creative problem-solving">
+              Dropdown text.
+            </dropdown-box>
+          </div>
+        </section>
+
+        <!-- SET 3 -->
+        <section class="about-set">
+          <div class="about-set-header">
+            <h2 class="about-set-title">Education</h2>
+            <img
+              class="about-set-icon"
+              src="./Assets/Graphics/triangle.png"
+              alt=""
+            />
+          </div>
+
+          <div class="about-set-grid">
+            <dropdown-box
+              icon="triangle"
+              label="BA Graphic Design and 
+              Web Development"
+            >
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box
+              icon="triangle"
+              label="Semester aborad: Copenhagen: 
+            Digital Product Development at EK 
+            - Formerly known as KEA"
+            >
+              Dropdown text.
+            </dropdown-box>
+            <dropdown-box
+              icon="triangle"
+              label="Course Abroad: Antwerp
+            AI & Media Literacy at
+            Kaerl De Grote University"
+            >
+              Dropdown text.
+            </dropdown-box>
+          </div>
+        </section>
       </div>
       <div data-include="./Components/footer.html"></div>
     </main>
 
     <script src="./JavaScript/include.js"></script>
     <script src="./JavaScript/intro.js"></script>
+    <script src="./JavaScript/dropdown-box.js"></script>
   </body>
 </html>
